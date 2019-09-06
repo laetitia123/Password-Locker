@@ -1,6 +1,8 @@
 #!/usr/bin/env python3.6
 from credentials import Credentials
 from user import User
+import string
+import random
 def create_credentials(pfacebook,pcanvas,ptwitter,pemail):
     '''
     Function to create a new contact
@@ -38,6 +40,10 @@ def check_existing_credentials(name):
 #     password = Credentials.generate_password()
 
 #     return password
+def pw_gen(size = 8, chars=string.ascii_letters + string.digits + string.punctuation):
+	return ''.join(random.choice(chars) for _ in range(size))
+
+print(pw_gen(int(input('How many characters in your password?'))))
 
 
 #     ........................................................USER..............................
@@ -105,7 +111,7 @@ def main():
                  print("Here is your account and your details")
                  print('\n')
                  for user in display_user():
-                     print(f"Account name:{user.password}  User name: {user.user_name} ")
+                     print(f"Password:{user.password}  User name: {user.user_name} ")
                      print('\n')
              else:
                  print('\n')
@@ -115,7 +121,7 @@ def main():
             print("Enter your password to login.")
             search_user = input()
             if check_existing_user(search_user):
-                search_cred = find_user(search_user)
+                search= find_user(search_user)
                 print("\033[1;32;1m   \n")
                 print(f"You are now logged in to your {user_name} account")
                 print("\033[1;37;1m   \n")
@@ -128,10 +134,10 @@ def main():
 #     print('\n')
 
                 while True:
-                    print("Use these short codes : cc - create a new contact, dc - display contacts, fc -delete credentials, ex -exit the contact list ")
+                    print("Use these short codes : cc - create a new contact, dc - display contacts, fc -delete credentials,ft -generate password, ex -exit the contact list ")
 
                     short_code = input().lower()
-
+        
                     if short_code == 'cc':
                             print("please type your corresponding Credentials")
                             print("-"*10)
@@ -174,6 +180,8 @@ def main():
                                     print('\n')
                                     print("You dont seem to have any credentials saved yet")
                                     print('\n')
+                    elif short_code == 'ft' :
+                              print(pw_gen(int(input('How many characters in your password?'))))
                     elif short_code == 'fc':     
                               for  credentials in display_credentials():
                                       
