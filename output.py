@@ -139,7 +139,7 @@ def main():
                     short_code = input().lower()
         
                     if short_code == 'cc':
-                            print("please type your corresponding Credentials")
+                            print("please type your password for correspondent acount-name")
                             print("-"*10)
 
                             print ("twitther password")
