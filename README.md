@@ -4,21 +4,22 @@ PASSWORD LOCKER
 ## Description
   Tthis is the project about password locker,
   it is the easy way of saving your password for different 
-  social media account
+  social media account.
 
 
 ## BDD
 
->user has to click on pizza he want to order.
+>user hasto enter to create username and password to be used for this app.
   
->and he will be directed to the form where he/she has to fill the form according to the pizza he/she want.
->The summary of what he/she choose must be showen.
->Then he has to click the delivery button so that the pizza can be delivery.
+>after login the user has to put his credential.
+>the credentials have to saved
+>The credentials created has to bedisplayed if the user want to see them.
+>.
 
 ## Setup/Installation Requirements
      computer with Internet
      Google clome to get the Webpage
-     visual stidio or any other code editor
+     visual stidio or any other code editor.
      linux instalation (option)
 
 
