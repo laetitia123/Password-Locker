@@ -96,15 +96,15 @@ def main():
         if short_code == 's':
             print("Create a Pass Word Locker Account")
             print("_"*100)
-            user_name= input('Account name:')
+            user_name= input('USERNAME:')
             print ('\n')
-            password = input('User name:')
+            password = input('PASSWORD:')
             print ('\n')
            
             save_user(create_user(user_name,password)) 
             print ('\n')
             print(f"HELLO {user_name} Account with the user name  {user_name} has been created.")
-            print(f"You can now login to your {user_name} account using your password.")
+            print(f"PLEASE {user_name} ENTER YOUR PASSWORD TO LOG IN.")
             print ('\n')
         elif short_code == 'd':
              if display_user():
