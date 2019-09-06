@@ -2,7 +2,9 @@ PASSWORD LOCKER
 #### By **Laetitia Uwizeyimana**
 ##
 ## Description
-  This project is about creating  an online website to oder Pizza.
+  Tthis is the project about password locker,
+  it is the easy way of saving your password for different 
+  social media account
 
 
 ## BDD
