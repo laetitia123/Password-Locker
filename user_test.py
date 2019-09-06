@@ -50,21 +50,14 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(self.new_credentials.twitter,"eaeaeeatgg")
         self.assertEqual(self.new_credentials.email,"TTTFGGEHJGHSRTMN")
 
-        # test if credentials exist
-
-# def test_credentials_exists(self):
-#         '''
-#         test to check if we can return a Boolean  if we cannot find the contact.
-#         '''
-
-#         self.new_credentials.save_credentials()
-#         test_credentials= Contact("Test","user","0711223344","test@user.com") # new contact
-#         test_credentials.save_contact()
-
-#         credentials_exists = Credentials.credentials_exist("0711223344")
-
-#         self.assertTrue(credentials_exists)
+    def test_save_credentials(self):
+        '''
+        test_save_contact test case to test if the credentials object is saved into
+         the contact list
+        '''
+        self.new_credentials.save_credentials() # saving the new contact
+        self.assertEqual(len(Credentials.credentials_list),1)
 
 
-if __name__ == '__main__':
+if __name__ ==  '__main__':
     unittest.main()

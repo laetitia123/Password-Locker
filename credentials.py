@@ -20,7 +20,13 @@ class Credentials:
         method that returns the contact list
         '''
         return cls.credentials_list
-    # @classmethod
-    # def save_credentials(cls):
-    #   '''
+    contact_list = [] # Empty contact list
+ # Init method up here
+    def save_credentials(self):
+
+        '''
+        save_credentials method saves credentials objects into credentials_list
+        '''
+
+        Credentials.credentials_list.append(self)
       
