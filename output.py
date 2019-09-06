@@ -34,16 +34,16 @@ def main():
                             print("New Credentials")
                             print("-"*10)
 
-                            print ("twitther....")
+                            print ("twitther password")
                             pfacebook = input()
 
-                            print("Last name ...")
+                            print("canvas password")
                             pcanvas= input()
 
-                            print("Phone number ...")
+                            print("twitter password")
                             ptwitter= input()
 
-                            print("Email address ...")
+                            print("Email password")
                             email = input()
 
 

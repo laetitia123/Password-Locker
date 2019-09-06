@@ -20,3 +20,7 @@ class Credentials:
         method that returns the contact list
         '''
         return cls.credentials_list
+    # @classmethod
+    # def save_credentials(cls):
+    #   '''
+      
