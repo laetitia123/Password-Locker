@@ -1,3 +1,4 @@
+import pyperclip
 class User:
     """
     Class that generates new instances of users.
@@ -26,7 +27,8 @@ class User:
         delete_account method deletes a saved account from the account_list
         '''
 
-        User.user_list.remove(self)    
+        User.user_list.remove(self)   
+
     @classmethod
     def find_by_name(cls,name):
         for user in cls.user_list:
@@ -37,7 +39,7 @@ class User:
     @classmethod
     def user_exist(cls,name):
         '''
-        Method that checks if a account exists from the account list.
+        Method that checks if a account exists from the user list.
         Args:
             name: Acc name to search if it exists
         Returns :
@@ -49,7 +51,7 @@ class User:
 
         return False
     @classmethod
-    def display_user_acount(cls):
+    def display_user(cls):
         '''
         method that returns the account list
         '''

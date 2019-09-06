@@ -23,6 +23,12 @@ def del_credentials(credentials):
     Function to delete a credentials
     '''
     credentials.delete_credentials()
+
+def check_existing_credentials(name):
+    '''
+    Function that check if an account exists with that name and return a Boolean
+    '''
+    return Credentials.credentials_exist(name)  
 # def create_generated_password():
 #     '''
 #     Function that generates a password for the user 
@@ -42,46 +48,86 @@ def create_user(user_name,password):
     new_user = User(user_name,password)
     return new_user
 
-# def save_user(name):
-#     '''
-#     Function to save user
-#     '''
-#     user.save_user()    
+def save_user(user):
+    '''
+    Function to save user
+    '''
+    user.save_user()    
 
-# def del_user(account):
-#     '''
-#     Function to delete a account
-#     '''
-#     User.delete_user()    
+def del_user(user):
+    '''
+    Function to delete a account
+    '''
+    user.delete_user()    
 
 
-# def find_user():
-#     '''
-#     Function that finds a account by nane and returns the account
-#     '''
-#     return User.find_by_name()    
+def find_user(name):
+    '''
+    Function that finds a account by nane and returns the account
+    '''
+    return User.find_by_name(name)    
 
-# def check_existing_accounts():
-#     '''
-#     Function that check if an account exists with that name and return a Boolean
-#     '''
-#     return user.user_exist()    
+def check_existing_user(name):
+    '''
+    Function that check if an account exists with that name and return a Boolean
+    '''
+    return User.user_exist(name)    
 
-# def display_accounts():
-#     '''
-#     Function that returns all the saved accounts
-#     '''
-#     return user.display_user()  
+def display_user():
+    '''
+    Function that returns all the saved accounts
+    '''
+    return User.display_user()  
 def main():
+
+    print("Hello Welcome to your Pass Word Locker. What is your name?")
+    user_name = input()
+    print(f"Hello {user_name}, sign up to Pass Word Locker to create an account.")
+    print('\n')
+    while True:
+        print("Use these known short codes to operate :\n SU -> SIGN UP.\n DA -> Display your account.\n LN ->LOGIN.\n ex ->exit Pass Word Locker. ")
+        short_code = input().lower()
+        if short_code == 'su':
+            print("Create a Pass Word Locker Account")
+            print("_"*100)
+            user_name= input('Account name:')
+            print ('\n')
+            password = input('User name:')
+            print ('\n')
+           
+            save_user(create_user(user_name,password)) 
+            print ('\n')
+            print(f"A New {user_name} Account with the user name  {user_name} has been created.")
+            print(f"You can now login to your {user_name} account using your password.")
+            print ('\n')
+        elif short_code == 'da':
+             if display_user():
+                 print("Here is your account and your details")
+                 print('\n')
+                 for user in display_user():
+                     print(f"Account name:{user.password}  User name: {user.user_name} ")
+                     print('\n')
+             else:
+                 print('\n')
+                 print("You dont seem to have created an account.Sign up to create a new account.")
+                 print('\n')
+        elif short_code == 'ln':
+            print("Enter your password to login.")
+            search_user = input()
+            if check_existing_user(search_user):
+                search_cred = find_user(search_user)
+                print("\033[1;32;1m   \n")
+                print(f"You are now logged in to your {user_name} account")
+                print("\033[1;37;1m   \n")
 #     handle = open("text-write.txt", "w+")  
 #     handle.write("Hello Moringa")  
-    print("Hello Welcome to your credentials list. What is your name?")
-    user_name = input()
+#     print("Hello Welcome to your credentials list. What is your name?")
+#     user_name = input()
 
-    print(f"Hello {user_name}. what would you like to do?")
-    print('\n')
+#     print(f"Hello {user_name}. what would you like to do?")
+#     print('\n')
 
-    while True:
+                while True:
                     print("Use these short codes : cc - create a new contact, dc - display contacts, fc -delete credentials, ex -exit the contact list ")
 
                     short_code = input().lower()
@@ -131,9 +177,9 @@ def main():
                     elif short_code == 'fc':     
                               for  credentials in display_credentials():
                                       
-                                     credentials. delete_credentials(0)
-                                     print(f"{credentials.twitter}" )
+                                     credentials. delete_credentials()
+                                     print("deleted" )
 #     handle.close()                             
 if __name__ == '__main__':
 
-    main()
+   main()
