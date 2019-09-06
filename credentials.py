@@ -1,4 +1,6 @@
 import pyperclip
+import string
+# import choice
 class Credentials:
     """
     Class that generates new instances of credentials.
@@ -30,3 +32,25 @@ class Credentials:
 
         Credentials.credentials_list.append(self)
       
+    def delete_credentials(self):
+
+        '''
+        delete_contact method deletes a save credentials from the credentials_list
+        '''
+
+        Credentials.credentials_list.remove(self)
+    # @classmethod
+    # def generate_password(cls):
+    #     '''
+    #     Method that generates a random alphanumeric password
+    #     '''
+    #     # Length of the generated password
+    #     size = 8
+
+    #     # Generate random alphanumeric 
+    #     alphanum = string.ascii_uppercase + string.digits + string.ascii_lowercase
+
+    #     # Create password
+    #     password = ''.join( choice(alphanum) for num in range(size) )
+        
+    #     return password

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3.6
 from credentials import Credentials
+from user import User
 def create_credentials(pfacebook,pcanvas,ptwitter,pemail):
     '''
     Function to create a new contact
@@ -17,16 +18,71 @@ def display_credentials():
     Function that returns all the saved credentials
     '''
     return Credentials.display_credentials()
+def del_credentials(credentials):
+    '''
+    Function to delete a credentials
+    '''
+    credentials.delete_credentials()
+# def create_generated_password():
+#     '''
+#     Function that generates a password for the user 
+#     Args:
+#         name : the name of the account
+#     '''
+#     password = Credentials.generate_password()
 
+#     return password
+
+
+#     ........................................................USER..............................
+def create_user(user_name,password):
+    '''
+    Function to create a new account
+    '''
+    new_user = User(user_name,password)
+    return new_user
+
+# def save_user(name):
+#     '''
+#     Function to save user
+#     '''
+#     user.save_user()    
+
+# def del_user(account):
+#     '''
+#     Function to delete a account
+#     '''
+#     User.delete_user()    
+
+
+# def find_user():
+#     '''
+#     Function that finds a account by nane and returns the account
+#     '''
+#     return User.find_by_name()    
+
+# def check_existing_accounts():
+#     '''
+#     Function that check if an account exists with that name and return a Boolean
+#     '''
+#     return user.user_exist()    
+
+# def display_accounts():
+#     '''
+#     Function that returns all the saved accounts
+#     '''
+#     return user.display_user()  
 def main():
-    print("Hello Welcome to your contact list. What is your name?")
+#     handle = open("text-write.txt", "w+")  
+#     handle.write("Hello Moringa")  
+    print("Hello Welcome to your credentials list. What is your name?")
     user_name = input()
 
     print(f"Hello {user_name}. what would you like to do?")
     print('\n')
 
     while True:
-                    print("Use these short codes : cc - create a new contact, dc - display contacts, fc -find a contact, ex -exit the contact list ")
+                    print("Use these short codes : cc - create a new contact, dc - display contacts, fc -delete credentials, ex -exit the contact list ")
 
                     short_code = input().lower()
 
@@ -49,7 +105,7 @@ def main():
 
                             save_credentials(create_credentials(pfacebook,pcanvas,  ptwitter,email)) # create and save new contact.
                             print ('\n')
-                            print(f"New Credentials{  pfacebook} ")
+                            print(f"New Credentials {  pfacebook} ")
                             print ('\n')
                             print(f"New Credentials{ pcanvas} ")
                             print ('\n')
@@ -61,7 +117,7 @@ def main():
                     elif short_code == 'dc':
 
                             if display_credentials():
-                                    print("Here is a list of all your cREDENTIALS")
+                                    print("Here is a list of all your CREDENTIALS")
                                     print('\n')
 
                                     for  credentials in display_credentials():
@@ -70,8 +126,14 @@ def main():
                                     print('\n')
                             else:
                                     print('\n')
-                                    print("You dont seem to have any contacts saved yet")
+                                    print("You dont seem to have any credentials saved yet")
                                     print('\n')
+                    elif short_code == 'fc':     
+                              for  credentials in display_credentials():
+                                      
+                                     credentials. delete_credentials(0)
+                                     print(f"{credentials.twitter}" )
+#     handle.close()                             
 if __name__ == '__main__':
 
-     main()
+    main()
