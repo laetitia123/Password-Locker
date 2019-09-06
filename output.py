@@ -91,9 +91,9 @@ def main():
     print(f"Hello {user_name}, create  your account.")
     print('\n')
     while True:
-        print("Use these known short codes to operate :\n SU -> SIGN UP.\n DA -> Display your account.\n LN ->LOGIN.\n ex ->exit Pass Word Locker. ")
+        print("Use these known short codes to operate :\n S -> To create your account.\n D -> Display your account.\n L ->For you to log in.\n ex ->To exit password locker. ")
         short_code = input().lower()
-        if short_code == 'su':
+        if short_code == 's':
             print("Create a Pass Word Locker Account")
             print("_"*100)
             user_name= input('Account name:')
@@ -106,7 +106,7 @@ def main():
             print(f"A New {user_name} Account with the user name  {user_name} has been created.")
             print(f"You can now login to your {user_name} account using your password.")
             print ('\n')
-        elif short_code == 'da':
+        elif short_code == 'd':
              if display_user():
                  print("Here is your account and your details")
                  print('\n')
@@ -117,7 +117,7 @@ def main():
                  print('\n')
                  print("You dont seem to have created an account.Sign up to create a new account.")
                  print('\n')
-        elif short_code == 'ln':
+        elif short_code == 'l':
             print("Enter your password to login.")
             search_user = input()
             if check_existing_user(search_user):
