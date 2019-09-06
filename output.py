@@ -88,7 +88,7 @@ def main():
 
     print("Hello Welcome to your Pass Word Locker. What is your name?")
     user_name = input()
-    print(f"Hello {user_name}, sign up to Pass Word Locker to create an account.")
+    print(f"Hello {user_name}, create  your account.")
     print('\n')
     while True:
         print("Use these known short codes to operate :\n SU -> SIGN UP.\n DA -> Display your account.\n LN ->LOGIN.\n ex ->exit Pass Word Locker. ")
