@@ -31,7 +31,7 @@
     *paython3.6
    
 ## my Github account
-https://laetitia123.github.io/Pizzerie-web/
+<!-- https://laetitia123.github.io/Pizzerie-web/ -->
 ## Support and contact details
 Any contribution or support please contact me on my email:uwizelaetitia@gmail.com
 ### License
