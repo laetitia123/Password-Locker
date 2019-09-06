@@ -103,12 +103,12 @@ def main():
            
             save_user(create_user(user_name,password)) 
             print ('\n')
-            print(f"A New {user_name} Account with the user name  {user_name} has been created.")
+            print(f"HELLO {user_name} Account with the user name  {user_name} has been created.")
             print(f"You can now login to your {user_name} account using your password.")
             print ('\n')
         elif short_code == 'd':
              if display_user():
-                 print("Here is your account and your details")
+                 print("Here is your username and password")
                  print('\n')
                  for user in display_user():
                      print(f"Password:{user.password}  User name: {user.user_name} ")
