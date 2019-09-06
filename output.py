@@ -9,12 +9,12 @@ def create_credentials(pfacebook,pcanvas,ptwitter,pemail):
 
 def save_credentials(credentials):
     '''
-    Function to save contact
+    Function to save credentials
     '''
     credentials.save_credentials()
 def display_credentials():
     '''
-    Function that returns all the saved contacts
+    Function that returns all the saved credentials
     '''
     return Credentials.display_credentials()
 
@@ -31,7 +31,7 @@ def main():
                     short_code = input().lower()
 
                     if short_code == 'cc':
-                            print("New Credentials")
+                            print("please type your corresponding Credentials")
                             print("-"*10)
 
                             print ("twitther password")
@@ -49,7 +49,13 @@ def main():
 
                             save_credentials(create_credentials(pfacebook,pcanvas,  ptwitter,email)) # create and save new contact.
                             print ('\n')
-                            print(f"New Credentials{  pfacebook} {  pfacebook} created")
+                            print(f"New Credentials{  pfacebook} ")
+                            print ('\n')
+                            print(f"New Credentials{ pcanvas} ")
+                            print ('\n')
+                            print(f"New Credentials{  ptwitter}" )
+                            print ('\n')
+                            print(f"New Credentials{  email}")
                             print ('\n')
 
                     elif short_code == 'dc':
