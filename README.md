@@ -18,14 +18,13 @@
 
 ## Setup/Installation Requirements
      computer with Internet
-     Google clome to get the Webpage
-     visual stidio or any other code editor.
      linux instalation (option)
+     intall paython 3.6
 
 
 ## Known Bugs
  
- I am still working on how to cancel the delivery.
+ <!-- I am still working on how to cancel the delivery. -->
 
 ## Technologies Used
 
