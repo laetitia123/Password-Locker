@@ -196,11 +196,11 @@ def main():
                                     print('\n')
                     elif short_code == 'ft' :
                               print(pw_gen(int(input('How many characters in your password?'))))
-                #     elif short_code == 'fc':     
-                #               for  credentials in display_credentials():
+                    elif short_code == 'fc':     
+                              for  credentials in display_credentials():
                                       
-                #                      credentials. delete_credentials()
-                #                      print("deleted" )
+                                     credentials. delete_credentials()
+                                     print("deleted" )
                     elif short_code == "ex":
                         print("Bye .......")
                         break
