@@ -199,8 +199,8 @@ def main():
                     elif short_code == 'fc':     
                               for  credentials in display_credentials():
                                       
-                                     credentials. delete_credentials()
-                                     print("deleted" )
+                                credentials.delete_credentials()
+                                print("deleted" )
                     elif short_code == "ex":
                         print("Bye .......")
                         break
