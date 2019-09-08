@@ -3,6 +3,7 @@ from credentials import Credentials
 from user import User
 import string
 import random
+# ...................................credentials...................................
 def create_credentials(pfacebook,pcanvas,ptwitter,pemail):
     '''
     Function to create a new contact
@@ -43,7 +44,7 @@ def check_existing_credentials(name):
 def pw_gen(size = 8, chars=string.ascii_letters + string.digits + string.punctuation):
 	return ''.join(random.choice(chars) for _ in range(size))
 
-print(pw_gen(int(input('How many characters in your password?'))))
+# print(pw_gen(int(input('How many characters in your password?'))))
 
 
 #     ........................................................USER..............................
@@ -88,14 +89,15 @@ def main():
 
     print("Hello Welcome to your Pass Word Locker. What is your name?")
     user_name = input()
-    print(f"Hello {user_name}, create  your account.")
+#     print(f"Hello {user_name}, create  your account.")
     print('\n')
     while True:
-        print("Use these known short codes to operate :\n S -> To create your account.\n D -> Display your account.\n L ->For you to log in.\n ex ->To exit password locker. ")
+        print(f" WELCOME {user_name} PLEASE SELECT ACCORDING TO WHAT YOU WANT TO DO :\n S -> To create your account.\n D -> Display your account.\n L ->For you to log in.\n ex ->To exit password locker. ")
+        print("_"*80)
         short_code = input().lower()
         if short_code == 's':
-            print("Create a Pass Word Locker Account")
-            print("_"*100)
+            print("CREATE PASSWORD LOCKER ")
+            print("_"*80)
             user_name= input('USERNAME:')
             print ('\n')
             password = input('PASSWORD:')
@@ -103,28 +105,36 @@ def main():
            
             save_user(create_user(user_name,password)) 
             print ('\n')
-            print(f"HELLO {user_name} Account with the user name  {user_name} has been created.")
-            print(f"PLEASE {user_name} ENTER YOUR PASSWORD TO LOG IN.")
+            print(f"THE ACCOUNT HAS BEEN CREATED WUTH USERNAME {user_name} AND PASSWORD {password}.")
             print ('\n')
+            
         elif short_code == 'd':
              if display_user():
-                 print("Here is your username and password")
+                 print("HERE IS YOUR USERNAME AND PASSWORD")
+                 print("_"*80)
                  print('\n')
                  for user in display_user():
-                     print(f"Password:{user.password}  User name: {user.user_name} ")
+                     print(f"PASSWORD:{user.password}  USERNAME: {user.user_name} ")
                      print('\n')
              else:
                  print('\n')
-                 print("You dont seem to have created an account.Sign up to create a new account.")
+                 print("PLEASE CREATE ACOUNT FIRST")
                  print('\n')
+        elif short_code == "ex":
+                            print("Bye .......")
+                            break
         elif short_code == 'l':
-            print("Enter your password to login.")
+            print(f"PLEASE {user_name} ENTER YOUR PASSWORD TO LOG IN.")
+            print ('\n')
             search_user = input()
             if check_existing_user(search_user):
                 search= find_user(search_user)
                 print("\033[1;32;1m   \n")
                 print(f"You are now logged in to your {user_name} account")
                 print("\033[1;37;1m   \n")
+            else:
+                print('Wrong password')    
+                break
 #     handle = open("text-write.txt", "w+")  
 #     handle.write("Hello Moringa")  
 #     print("Hello Welcome to your credentials list. What is your name?")
@@ -133,47 +143,51 @@ def main():
 #     print(f"Hello {user_name}. what would you like to do?")
 #     print('\n')
 
-                while True:
-                    print("Use these short codes : cc - create a new contact, dc - display contacts, fc -delete credentials,ft -generate password, ex -exit the contact list ")
+            while True:
+                    print("FOLLOW THIS SHORTCODE ACCORDING TO WHAT YOU WANT TO DO : \n cc - create credentials,\n dc - display credentials, \n fc -delete credentials,\n ft -generate password new acount, \n ex -exit Password Locker ")
 
                     short_code = input().lower()
         
                     if short_code == 'cc':
-                            print("please type your password for correspondent acount-name")
+                            print("PLEASE ENTER THE PASSWORD YOU WANT TO SAVE ACORDING TO YOUR ACCOUNT")
                             print("-"*10)
 
-                            print ("twitther password")
+                            print ("PASSWORD FOR FACEBOOK :")
                             pfacebook = input()
+                            print("\n")
 
-                            print("canvas password")
+                            print("PASSWORD FOR CANVAS :")
                             pcanvas= input()
+                            print("\n")
 
-                            print("twitter password")
+                            print("PASSWORD FOR TWITTER :")
                             ptwitter= input()
+                            print("\n")
 
-                            print("Email password")
+                            print("PASSWORD FOR YOUR EMAIL :")
                             email = input()
+                            print("\n")
 
 
-                            save_credentials(create_credentials(pfacebook,pcanvas,  ptwitter,email)) # create and save new contact.
+                            save_credentials(create_credentials(pfacebook,pcanvas,  ptwitter,email)) 
                             print ('\n')
-                            print(f"New Credentials {  pfacebook} ")
+                            print(f"FACEBOOK PASSWORD  {  pfacebook} ")
                             print ('\n')
-                            print(f"New Credentials{ pcanvas} ")
+                            print(f"CANVAS PASSWORD { pcanvas} ")
                             print ('\n')
-                            print(f"New Credentials{  ptwitter}" )
+                            print(f"TWITTER PASSWORD {  ptwitter}" )
                             print ('\n')
-                            print(f"New Credentials{  email}")
+                            print(f"EMAIL PASSWORD {  email}")
                             print ('\n')
 
                     elif short_code == 'dc':
 
                             if display_credentials():
-                                    print("Here is a list of all your CREDENTIALS")
+                                    print("HERE IS THELIST OF YOUR  CREDENTIALS")
                                     print('\n')
 
                                     for  credentials in display_credentials():
-                                            print(f"{credentials.twitter} {credentials.facebook}")
+                                            print(f"{credentials.twitter} {credentials.facebook} {credentials.canvas} {credentials.email}")
 
                                     print('\n')
                             else:
@@ -182,12 +196,19 @@ def main():
                                     print('\n')
                     elif short_code == 'ft' :
                               print(pw_gen(int(input('How many characters in your password?'))))
-                    elif short_code == 'fc':     
-                              for  credentials in display_credentials():
+                #     elif short_code == 'fc':     
+                #               for  credentials in display_credentials():
                                       
-                                     credentials. delete_credentials()
-                                     print("deleted" )
+                #                      credentials. delete_credentials()
+                #                      print("deleted" )
+                    elif short_code == "ex":
+                        print("Bye .......")
+                        break
+                        
+        else:
+             print("I don't get that shortcode you have used. Please select the other one")
+             print("\n")    
 #     handle.close()                             
 if __name__ == '__main__':
 
-   main()
+    main()
