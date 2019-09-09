@@ -173,11 +173,11 @@ def main():
                     elif short_code == 'dc':
 
                             if display_credentials():
-                                    print("HERE IS THELIST OF YOUR  CREDENTIALS")
+                                    print("HERE IS THE LIST OF YOUR  CREDENTIALS")
                                     print('\n')
 
                                     for  credentials in display_credentials():
-                                            print(f"{credentials.twitter} {credentials.facebook} {credentials.canvas} {credentials.email}")
+                                            print(f" TWITTER:{credentials.twitter} \n FACEBOOK:{credentials.facebook} \n CANVAS:{credentials.canvas} \n EMAIL:{credentials.email}")
 
                                     print('\n')
                             else:
