@@ -32,15 +32,12 @@ def check_existing_credentials(name):
     Function that check if an account exists with that name and return a Boolean
     '''
     return Credentials.credentials_exist(name)  
-# def create_generated_password():
-#     '''
-#     Function that generates a password for the user 
-#     Args:
-#         name : the name of the account
-#     '''
-#     password = Credentials.generate_password()
+def find_credentials(name):
+   '''
+   Function that finds a credential by username and returns the user credential
+   '''
+   return Credentials.find_by_name(name)
 
-#     return password
 def pw_gen(size = 8, chars=string.ascii_letters + string.digits + string.punctuation):
 	return ''.join(random.choice(chars) for _ in range(size))
 
@@ -135,16 +132,9 @@ def main():
             else:
                 print('Wrong password')    
                 break
-#     handle = open("text-write.txt", "w+")  
-#     handle.write("Hello Moringa")  
-#     print("Hello Welcome to your credentials list. What is your name?")
-#     user_name = input()
-
-#     print(f"Hello {user_name}. what would you like to do?")
-#     print('\n')
 
             while True:
-                    print("FOLLOW THIS SHORTCODE ACCORDING TO WHAT YOU WANT TO DO : \n cc - create credentials,\n dc - display credentials, \n fc -delete credentials,\n ft -generate password new acount, \n ex -exit Password Locker ")
+                    print("FOLLOW THIS SHORTCODE ACCORDING TO WHAT YOU WANT TO DO : \n cc - create credentials,\n dc - display credentials, \n fc -delete credentials,\n ft -generate password new acount,\n f- find  \n ex -exit Password Locker ")
 
                     short_code = input().lower()
         
@@ -201,12 +191,27 @@ def main():
                                       
                                 credentials.delete_credentials()
                                 print("deleted" )
+
+                    # elif short_code == 'f':
+
+                    #         print("Enter the number you want to search for")
+
+                    #         search_name = input()
+                    #         if check_existing_credentials(search_name):
+                    #                 search_credentials = find_credentials(search_name)
+                    #                 print(f"{search_credentials} {search_credentials.canvas}")
+                    #                 print('-' * 20)
+
+                    #                 print(f"facebook.......{search_credentials.facebook}")
+                    #                 print(f"Email address.......{search_credentials.email}")
+                    #         else:
+                    #                 print("That contact does not exist")            
                     elif short_code == "ex":
-                        print("Bye .......")
+                        print("Bye ....")
                         break
                         
         else:
-             print("I don't get that shortcode you have used. Please select the other one")
+             print("I don't get that Shortcode you have used. Please select the other one")
              print("\n")    
 #     handle.close()                             
 if __name__ == '__main__':

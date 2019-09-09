@@ -40,6 +40,12 @@ class Credentials:
 
         Credentials.credentials_list.remove(self)
     @classmethod
+    def find_by_name(cls,name):
+        for credentials in cls.credentials_list:
+            if credentials.credentials_name == name:
+                return Credentials  
+    
+    @classmethod
     def credentials_exist(cls,name):
         '''
         Method that checks if a credentials exists from the credentials list.

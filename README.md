@@ -9,7 +9,8 @@
 
 ## BDD
 
->user hasto enter to create username and password to be used for this app.
+>user has to enter and  create username and password to be used for this app wiwth c shortcode.
+<img src="first.png" width="750" title="hover text">
   
 >after login the user has to put his credential.
 >the credentials have to saved
