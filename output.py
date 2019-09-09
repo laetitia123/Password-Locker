@@ -186,6 +186,7 @@ def main():
                                     print('\n')
                     elif short_code == 'ft' :
                               print(pw_gen(int(input('How many characters in your password?'))))
+                              print("your password has bees created")
                     elif short_code == 'fc':     
                               for  credentials in display_credentials():
                                       
