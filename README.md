@@ -6,6 +6,8 @@
   it is the easy way of saving your password for different 
   social  accounts.
 
+  This application is viewable only in terminal
+
 
 ## BDD
 
@@ -47,7 +49,7 @@
 
 
 ## Known Bugs
- The delete function is deleting all credentials instateof delete
+ The delete function is deleting all credentials instate of deleting a specific credential
 
 ## Technologies Used
 
