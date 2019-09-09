@@ -14,17 +14,17 @@
 >user has to enter and  create username and password to be used for this app wiwth c shortcode.
 <img src="first.png" width="750" title="hover text">
 
-> whith shortcode d the created acount is displayed
+> whith shortcode d the created acount is displayed and you have to enter the correct schortcode
 
 >with shortcode l the user log in witht the created 
  
- <img src="second.png " width="750" title="hover text">
+ <img src="six.png " width="750" title="hover text">
 
 >if the password is wrong  the user can not enter to the app
 
 <img src="third.png " width="750" title="hover text">
 
->after login the user has to put his credential.
+>after login the user has to put his credentials.
 
 <img src="fourth.png " width="750" title="hover text">
 
