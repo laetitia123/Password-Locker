@@ -84,7 +84,7 @@ def display_user():
     return User.display_user()  
 def main():
 
-    print("Hello Welcome to your Pass Word Locker. What is your name?")
+    print("Hello Welcome to your PassWord Locker. What is your name?")
     user_name = input()
 #     print(f"Hello {user_name}, create  your account.")
     print('\n')
