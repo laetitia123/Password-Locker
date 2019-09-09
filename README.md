@@ -1,10 +1,10 @@
 ### PASSWORD LOCKER
-#### By **Laetitia Uwizeyimana**
+#### By **Laetitia **
 ##
 ## Description
-  Tthis is the project about password locker,
+  This is the project about password locker,
   it is the easy way of saving your password for different 
-  social media account.
+  social  accounts.
 
 
 ## BDD
